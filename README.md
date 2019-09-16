@@ -24,15 +24,26 @@ The game in console interface works with commands:
   ```
 
 piece description:
-  colors:
+  - colors:
+  
   w - white
+  
   b - black
-  types:
+  
+  - types:
+  
   p - pawn
+  
   k - knight
+  
   b - bishop
+  
   r - rook
+  
   q - queen
+  
   k - king
-  special:
+  
+  - special:
+  
   null - represents no piece at the field
