@@ -11,13 +11,18 @@ python3 chess
 
 # How to do stuff there
 The game in console interface works with commands:
+
 **start**: starts the new game
+
 **move <src field> <trg field>**: moves a piece from one field to another
+
   example:
   ```
   move e2 e4 moves piece from e2 to e4
   ```
+
 **put <field> <piece type>** puts a piece on desired space
+
   example:
   ```
   put g3 wk - puts white king onto g3 field
