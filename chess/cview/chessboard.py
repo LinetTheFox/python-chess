@@ -1,6 +1,3 @@
-from cview.util.symbols import *
-
-
 class Chessboard:
 
     def __init__(self):

@@ -1,4 +1,4 @@
-from cview.util.symbols import *
+from chess.cview.util.symbols import *
 
 
 class Piece:

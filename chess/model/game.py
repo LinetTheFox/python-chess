@@ -1,5 +1,5 @@
-from model.piece import Piece
-from util.convert import *
+from chess.model.piece import Piece
+from chess.util.convert import *
 
 
 # Represents the core functionality of the game - board, pieces' management and basic operations i.e.

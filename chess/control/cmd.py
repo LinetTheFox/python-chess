@@ -1,4 +1,4 @@
-from model.game import Game
+from chess.model.game import Game
 
 
 def execute(cmd: str, game: Game) -> bool:

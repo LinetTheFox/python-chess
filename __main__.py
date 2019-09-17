@@ -1,9 +1,9 @@
 import os
 import getpass
 
-from cview.chessboard import Chessboard
-from control.cmd import execute
-from model.game import Game
+from chess.cview.chessboard import Chessboard
+from chess.control.cmd import execute
+from chess.model.game import Game
 
 os.system('cls' if os.name == 'nt' else 'clear')
 
