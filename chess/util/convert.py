@@ -3,6 +3,21 @@ def ntf(name: str) -> tuple:
     return '87654321'.index(name[1]), 'abcdefgh'.index(name[0])
 
 
-# convert the couple of 2d array indices to the name like e5, a1
-# def ftn(indices: tuple) -> str:
-#     return 'abcdefgh'[indices[1]] + '87654321'[indices[0]]
+# convert the piece code to its normal name for status messages
+def ctn(code: str) -> str:
+    color = 'white' if code[0] == 'W' else 'black'
+
+    if code[1] == 'P':
+        name = 'pawn'
+    elif code[1] == 'N':
+        name = 'knight'
+    elif code[1] == 'B':
+        name = 'bishop'
+    elif code[1] == 'R':
+        name = 'rook'
+    elif code[1] == 'Q':
+        name = 'queen'
+    else:
+        name = 'king'
+
+    return f"{color} {name}"

@@ -2,7 +2,7 @@ import os
 import getpass
 
 from chess.cview.chessboard import Chessboard
-from chess.control.cmd import execute
+from chess.control.cmd import *
 from chess.model.game import Game
 
 os.system('cls' if os.name == 'nt' else 'clear')
@@ -26,6 +26,7 @@ while True:
         os.system('cls' if os.name == 'nt' else 'clear')
         exit(0)
 
-    execute(command, game)
+    status = execute(command, game)
     chessboard.draw_board(game.board)
+    print(status)
 
