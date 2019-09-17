@@ -28,6 +28,17 @@ The game in console interface works with commands (list of those that are suppor
   put g3 wk - puts white king onto g3 field
   ```
 
+**remove *field*** - removes the piece from the desired space
+
+  example:
+  ```
+  remove e1 - removes the whatever piece is on space e1
+  ```
+
+**clear** - clears the board
+
+**exit** - exits the game
+
 piece description:
   - colors:
   
@@ -53,4 +64,9 @@ piece description:
   
     * null - represents no piece at the field
  
- Piece is described with two-char literal - first color, then type. White pawn - wp, black bishop - bb etc
+ Piece is described with two-char literal - first color, then type.
+ 
+ White pawn - wp, black bishop - bb etc.
+ 
+ 
+ Fields use standart names in chess - e4, a1 etc.
