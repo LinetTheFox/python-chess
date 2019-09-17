@@ -45,17 +45,16 @@ class Game:
         self.board[7][6] = Piece('WN')
         self.board[7][7] = Piece('WR')
 
-    def move_piece(self, src_field: str, trg_field: str):
+    def move_piece(self, src_field: str, trg_field: str) -> (bool, str):
         src_piece = self.board[ntf(src_field)[0]][ntf(src_field)[1]]
         trg_piece = self.board[ntf(trg_field)[0]][ntf(trg_field)[1]]
         piece_name = ctn(src_piece.p_type)
 
-        #
-        # # check if the source field doesn't contain pieces
-        # if src_piece.p_type == 'NULL':
-        #     print("This field doesn't contain any pieces!")
-        #     return False
-        #
+        # check if the source field doesn't contain pieces
+        if src_piece.p_type == 'NULL':
+            print("This field doesn't contain any pieces!")
+            return False, 'null'
+
         # # check if the target field isn't occupied by own piece
         # if src_piece.color == trg_piece.color:
         #     print("You can't move on your own pieces!")
@@ -66,7 +65,7 @@ class Game:
         self.board[ntf(trg_field)[0]][ntf(trg_field)[1]] = src_piece
         self.board[ntf(src_field)[0]][ntf(src_field)[1]] = Piece('NULL')
 
-        return piece_name
+        return True, piece_name
 
     def put_piece(self, field: str, piece: str):
         self.board[ntf(field)[0]][ntf(field)[1]] = Piece(piece.upper())
@@ -75,4 +74,4 @@ class Game:
         piece_name = self.board[ntf(field)[0]][ntf(field)[1]]
         self.board[ntf(field)[0]][ntf(field)[1]] = Piece('NULL')
 
-        return ctn(piece_name)
+        return ctn(piece_name.p_type)

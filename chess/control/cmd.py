@@ -21,8 +21,13 @@ def execute(cmd: str, game: Game) -> str:
         if not validate_field(parts[2]):
             return f"First and second arguments must be field names, your second field name {parts[2]} is invalid!"
 
-        piece_name = game.move_piece(parts[1], parts[2])
-        return f"Moved a {piece_name} from {parts[1]} to {parts[2]}."
+        result = game.move_piece(parts[1], parts[2])
+
+        if not result[0]:
+            if result[1] == 'null':
+                return "Can't move a piece that isn't there!"
+
+        return f"Moved a {result[1]} from {parts[1]} to {parts[2]}."
 
     elif parts[0] == 'put':
 
