@@ -39,6 +39,8 @@ The game in console interface works with commands (list of those that are suppor
 
 **exit** - exits the game
 
+# extras
+
 piece description:
   - colors:
   
