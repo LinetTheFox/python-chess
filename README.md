@@ -10,7 +10,7 @@ python3 chess
 ```
 
 # How to do stuff there
-The game in console interface works with commands:
+The game in console interface works with commands (list of those that are supported so far):
 
 **start**: starts the new game
 
@@ -31,24 +31,26 @@ The game in console interface works with commands:
 piece description:
   - colors:
   
-  w - white
+    * w - white
   
-  b - black
+    * b - black
   
   - types:
   
-  p - pawn
+    * p - pawn
   
-  k - knight
+    * k - knight
   
-  b - bishop
+    * b - bishop
   
-  r - rook
+    * r - rook
   
-  q - queen
+    * q - queen
   
-  k - king
+    * k - king
   
   - special:
   
-  null - represents no piece at the field
+    * null - represents no piece at the field
+ 
+ Piece is described with two-char literal - first color, then type. White pawn - wp, black bishop - bb etc
