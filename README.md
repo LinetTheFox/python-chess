@@ -6,7 +6,7 @@ My last chess attempt turned out to be not so successful. I tried to consider al
 # Running
 After extracting the zip simply run 
 ```
-python3 chess
+python3 python-chess
 ```
 
 # How to do stuff there
