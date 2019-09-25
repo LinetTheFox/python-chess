@@ -1,6 +1,10 @@
 from chess.model.game import Game
 from chess.control.validation import *
+from chess.model.history.history import History
 from chess.util.convert import *
+
+
+history = History()
 
 
 def execute(cmd: str, game: Game) -> str:
@@ -26,6 +30,8 @@ def execute(cmd: str, game: Game) -> str:
         if not result[0]:
             if result[1] == 'null':
                 return "Can't move a piece that isn't there!"
+
+        history.append(game.board)
 
         return f"Moved a {result[1]} from {parts[1]} to {parts[2]}."
 
@@ -54,11 +60,25 @@ def execute(cmd: str, game: Game) -> str:
 
     elif parts[0] == 'start':
         game.set_new_board()
+        history.append(game.board)
         return "Started a new game."
 
     elif parts[0] == 'clear':
         game.clear_board()
         return "Cleared the board."
 
+    elif parts[0] == 'undo':
+        (board, status) = history.undo()
+        if status != "success":
+            return status
+        game.set_board(board)
+        return "Undid a move."
+
+    elif parts[0] == 'redo':
+        (board, status) = history.redo()
+        if status != "success":
+            return status
+        game.set_board(board)
+        return "Redid a move."
     else:
         return f"Unknown command: {parts[0]}"

@@ -12,12 +12,18 @@ from chess.util.convert import *
 # etc.
 #
 # white_pieces & black_pieces: these list store all the pieces of respective color.
-
 class Game:
     board = [[]]
 
     def __init__(self):
         self.clear_board()
+
+    def __str__(self):
+        res = ""
+        for i in range(8):
+            for j in range(8):
+                res += self.board[i][j]
+        return res
 
     def clear_board(self):
         self.board = [[Piece('NULL') for i in range(8)] for i in range(8)]
@@ -26,6 +32,11 @@ class Game:
         self.clear_board()
         self.board[1] = [Piece('BP') for i in range(8)]
         self.board[6] = [Piece('WP') for i in range(8)]
+
+        self.board[2] = [Piece('NULL') for i in range(8)]
+        self.board[3] = [Piece('NULL') for i in range(8)]
+        self.board[4] = [Piece('NULL') for i in range(8)]
+        self.board[5] = [Piece('NULL') for i in range(8)]
 
         self.board[0][0] = Piece('BR')
         self.board[0][1] = Piece('BN')
@@ -75,3 +86,9 @@ class Game:
         self.board[ntf(field)[0]][ntf(field)[1]] = Piece('NULL')
 
         return ctn(piece_name.p_type)
+
+    def set_board(self, board):
+        for i in range(8):
+            for j in range(8):
+                self.board[i][j] = board[i][j]
+
