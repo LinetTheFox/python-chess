@@ -9,9 +9,11 @@ class Piece:
     def __init__(self, p_type: str):
         self.p_type = p_type
         if p_type.startswith("W"):
-            color = 'white'
+            self.color = 'white'
+        elif p_type.startswith("B"):
+            self.color = 'black'
         else:
-            color = 'black'
+            self.color = 'none'
 
     def __repr__(self):
         return globals()[self.p_type]

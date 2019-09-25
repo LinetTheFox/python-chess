@@ -63,15 +63,13 @@ class Game:
 
         # check if the source field doesn't contain pieces
         if src_piece.p_type == 'NULL':
-            print("This field doesn't contain any pieces!")
-            return False, 'null'
+            return False, "This field doesn't contain any pieces!"
 
-        # # check if the target field isn't occupied by own piece
-        # if src_piece.color == trg_piece.color:
-        #     print("You can't move on your own pieces!")
-        #     return False
-        #
-        # # todo: insert here the validation of the move by chess rules later
+        # check if the target field isn't occupied by own piece
+        if src_piece.color == trg_piece.color:
+            return False, "You can't move on your own pieces!"
+
+        # todo: insert here the validation of the move by chess rules later
 
         self.board[ntf(trg_field)[0]][ntf(trg_field)[1]] = src_piece
         self.board[ntf(src_field)[0]][ntf(src_field)[1]] = Piece('NULL')
