@@ -37,6 +37,10 @@ The game in console interface works with commands (list of those that are suppor
 
 **clear** - clears the board
 
+**undo** - undoes a move (may be all the way to the beginning of the game)
+
+**redo** - redoes a move (may be all the way to the last move unless you did any different moves in the middle)
+
 **exit** - exits the game
 
 # extras
