@@ -60,11 +60,13 @@ def execute(cmd: str, game: Game) -> str:
 
     elif parts[0] == 'start':
         game.set_new_board()
+        history.reset()
         history.append(game.board)
         return "Started a new game."
 
     elif parts[0] == 'clear':
         game.clear_board()
+        history.reset()
         return "Cleared the board."
 
     elif parts[0] == 'undo':
