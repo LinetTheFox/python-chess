@@ -1,5 +1,6 @@
 from chess.model.piece import Piece
 from chess.util.convert import *
+from chess.util.metaclass.singleton import Singleton
 
 
 # Represents the core functionality of the game - board, pieces' management and basic operations i.e.
@@ -12,7 +13,8 @@ from chess.util.convert import *
 # etc.
 #
 # white_pieces & black_pieces: these list store all the pieces of respective color.
-class Game:
+class Game(metaclass=Singleton):
+
     board = [[]]
 
     def __init__(self):
@@ -89,4 +91,3 @@ class Game:
         for i in range(8):
             for j in range(8):
                 self.board[i][j] = board[i][j]
-

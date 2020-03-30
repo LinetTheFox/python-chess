@@ -1,13 +1,12 @@
 import os
 import getpass
 
-from chess.cview.chessboard import Chessboard
+from chess.cview import chessboard
 from chess.control.cmd import *
 from chess.model.game import Game
 
-os.system('cls' if os.name == 'nt' else 'clear')
+chessboard.clear()
 
-chessboard = Chessboard()
 game = Game()
 first_draw = True
 

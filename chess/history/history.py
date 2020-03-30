@@ -1,7 +1,9 @@
 from copy import deepcopy
 
+from chess.util.metaclass.singleton import Singleton
 
-class History:
+
+class History(metaclass=Singleton):
 
     history = []
     cur_pos = -1
